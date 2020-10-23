@@ -1,0 +1,46 @@
+"""
+BDD
+----
+input                                       output
+[1,2,3,4] , 2                               [1,2,4]
+[1,2,3,4] , 5                               [1,2,3,4]
+[1,2,3,4] , 4                               [2,3,4]
+
+  
+   f   s
+[1,2,4, None] , 2 
+
+pseudocode
+1.create fxn remove_kth_from_end(head, k):
+2. create two pointers and then use one of them to find the length
+3. if my nodelist length is greater than k
+4. move the second pointer kth times
+5. check if it's none; 
+6. update the head value
+7. else we increment the pointers until s.next is none
+8. if s.next is none, we want to update where the f.next points to
+9. if length is lesser then we want to return the nodelist 
+"""
+def remove_kth_from_end(head, k):
+    f =  head
+    s =  head
+    length = 0
+    counter =0
+    while s :
+        length + = 1
+        s= s.next
+    if length > k:
+       while counter <= k:
+        s= s.next
+        counter +=1  
+       if s is None:
+        head.value =  head.next.value
+        head.next =  head.next.next 
+       while s.next is not None:
+        f=f.next
+        s= s.next
+       f=f.next.next 
+    return head
+
+
+

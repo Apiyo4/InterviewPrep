@@ -14,36 +14,30 @@ Pseudocode
 
 """
 # def first_non_repeating_character(s):
-#     d ={}
+#     d = {}
 #     n = set(s)
-    
 #     for c in n:
 #         d[c] = 0
-
 #     for c in s:
 #         idx = s.index(c)
-#         for a in s[idx: idx + 1]:
-#             if a == c:
+#         for a in s[idx:idx+1]:
+#             if a == c :
 #                 d[a] += 1
 #             else:
-#                 d[c] += 0
-    
-#     key_list =  list(d.keys())
-#     val_list =  list(d.values())
-
-#     if 1 in val_list:
-#         ans = key_list[val_list.index(1)]
-        
-#         return ans
-#     else:
-#         return "_"
-# print(first_non_repeating_character("abacbc" ))
+#                 d[a] += 0
+#     key_list = list(d.keys())
+#     value_list = list(d.values())
+#     if 1 in value_list:
+#         idx = value_list.index(1)
+#         return key_list[idx]
+#     return "_"
+# print(first_non_repeating_character("abacb"))
 
 """
 pseudocode
 1. create a fxn
 2. create dict
-3. loop through string and if it already exist in dictionary add 1 else if it doesn't then assign it a value 1
+3. loop through array and if it already exist in dictionary add 1 else if it doesn't then assign it a value 1
 4. loop through the string
     return the char in the dict that has a value 1
 5. else return "_"
@@ -53,13 +47,11 @@ def first_non_repeating_character(s):
     d = {}
     for c in s:
         if d.get(c):
-            d[c] +=  1
+            d[c] += 1
         else:
             d[c] = 1
     for c in s:
         if d[c] == 1:
             return c
-
     return "_"
-
-print(first_non_repeating_character("abacbvvc" ))
+print(first_non_repeating_character("abacb"))

@@ -1,0 +1,77 @@
+*******One*********
+
+
+BDD
+----
+input                   output
+[1,2,3,4], 2            [1,2,4]
+[1,2,3,4], 5            [1,2,3,4]
+[1,2,3], 3              [2,3]
+  
+   f   s   
+[1,2,4] , 2
+
+pseudocode
+1. create fxn remove_kth_from_end and pas in head and k as value
+2. if length of linked list is > =  k
+3. we move s pointer kth times
+4. check if s is None
+5. update the head 
+6. we want to move both pointers until s.next is None, everytime incrementing the pointers
+7. if s.next is none, then we want to update the first pointer to point to another value
+8. we want to return the nodelist as it was if k is greater than it's length
+
+******Two*******
+
+
+
+BDD
+----
+input     behavior      output
+abcba     a,a b,b c        c             
+abcbac     a,a b,b c,c     _
+ d = {
+     a = 2,
+     b= 2,
+     c = 1
+ }
+
+
+pseudocode
+1. create a fxn first_not_repeating_character that takes a s as parameter
+2. create a dictionary 
+3. loop through our string
+4. check if character is in the dictionary
+5. if it is, we were to add one to the value
+6. if it's not we want to initalize it with 1
+7. loop through the string to get characters
+8. check if 1 is in the dictionary
+9. if it is, we want to return the character with 1
+10. else we want to return _
+ 
+
+ ******Three*******
+
+
+BDD
+input                                           behavior                                    output
+3, [[1,2], [1,3] [2,3]]                         1->2, 1->3, 2->3                               3
+3, [[1,2], [2,3]]                               1->2, 2->3                                     -1
+3, [[1,2], [2,3], [3,1]]                        1->2, 2->3, 3->1                                -1
+
+trusting = [1,1,2]  trusted=[2,3,3]
+d ={                            n-1, 3-1 = 2 , key 3 has value 2, if 3 is in trusting return -1 , return 3
+    2: 1,
+    3:2
+}
+
+pseudocode
+----------
+1. create uncover_spy(n, trust):
+2. split the trust arrau int two; trusting and trusted lists
+3. create a diction that uses the trusted elements as keys and the number of times they occur
+4. we check if our dictionary has n-1 as a value and is not in the trusting list
+5. if true then we return the key
+6. if it's false then we return -1
+
+ 
